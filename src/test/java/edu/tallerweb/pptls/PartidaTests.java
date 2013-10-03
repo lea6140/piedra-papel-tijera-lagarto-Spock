@@ -1,6 +1,7 @@
 package edu.tallerweb.pptls;
 
 import static org.junit.Assert.*;
+
 import org.junit.Test;
 
 public class PartidaTests {
@@ -15,5 +16,45 @@ public class PartidaTests {
 				Resultado.GANA, jugadorUno.jugarCon(jugadorDos));
 
 	}
+	
+	@Test
+	public void empate() {
+
+		Mano jugadorUno = new Mano(Forma.TIJERA);
+		Mano jugadorDos = new Mano(Forma.TIJERA);
+
+		assertEquals("Empatan",
+				Resultado.EMPATA, jugadorUno.jugarCon(jugadorDos));
+
+		
+		
+	}
+	
+	@Test
+	public void queLagartoEnvenenaSpock() {
+
+		Mano jugadorUno = new Mano(Forma.LAGARTO);
+		Mano jugadorDos = new Mano(Forma.SPOCK);
+
+		assertEquals("Lagarto envenena Spock",
+				Resultado.GANA, jugadorUno.jugarCon(jugadorDos));
+
+		
+		
+	}
+	
+	@Test
+	public void queSpockRompeTijera() {
+
+		Mano jugadorUno = new Mano(Forma.TIJERA);
+		Mano jugadorDos = new Mano(Forma.SPOCK);
+
+		assertEquals("Spock rompe tijera",
+				Resultado.PIERDE, jugadorUno.jugarCon(jugadorDos));
+
+		
+		
+	}
+	
 
 }
